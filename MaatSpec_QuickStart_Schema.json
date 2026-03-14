@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HarnessTieredSafetySystem",
+  "type": "object",
+  "properties": {
+    "action_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task_name": { "type": "string" },
+          "tier": {
+            "type": "integer",
+            "enum": [1, 2, 3, 4, 5],
+            "description": "The safety tier assigned based on risk level."
+          },
+          "authority": {
+            "type": "string",
+            "enum": ["Proactive", "Escalate", "Restricted"]
+          },
+          "requires_approval": { "type": "boolean" },
+          "verification_method": {
+            "type": "string",
+            "enum": ["None", "HITL_Confirmation", "MFA_Biometric"]
+          },
+          "enforcement_layers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["soul", "preflight", "guardian", "physical"]
+            },
+            "description": "Active enforcement layers for this action. Tier 1-3: [soul, preflight]. Tier 4: [soul, preflight]. Tier 5: [soul, preflight, guardian, physical]."
+          },
+          "enforcement_layers_optional": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["guardian"]
+            },
+            "description": "Optional enforcement layers. Tier 4 may optionally activate the Guardian Agent for high-stakes actions."
+          },
+          "parameters": { "type": "object" }
+        },
+        "required": ["task_name", "tier", "authority", "enforcement_layers"]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "harness_tiered_safety_system": {
+    "tier_1_3": {
+      "authority": "Proactive",
+      "risk": "Low",
+      "protocol": "Autonomous",
+      "enforcement_layers": ["soul", "preflight"],
+      "actions": ["web_research", "summarization", "drafting"]
+    },
+    "tier_4": {
+      "authority": "Escalate",
+      "risk": "High",
+      "protocol": "HITL_Confirmation",
+      "enforcement_layers": ["soul", "preflight"],
+      "enforcement_layers_optional": ["guardian"],
+      "actions": ["payments", "outgoing_comms"]
+    },
+    "tier_5": {
+      "authority": "Restricted",
+      "risk": "Critical",
+      "protocol": "MFA_Biometric",
+      "enforcement_layers": ["soul", "preflight", "guardian", "physical"],
+      "actions": ["json_edits", "system_restarts"]
+    }
+  }
+}

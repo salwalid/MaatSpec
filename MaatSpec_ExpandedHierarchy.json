@@ -1,0 +1,53 @@
+{
+  "harness_tiered_safety_system": {
+    "tier_1_3": {
+      "authority": "Proactive",
+      "risk_profile": "Low - Reversible/Internal",
+      "safety_protocol": "Autonomous Execution (Undo Logs Enabled)",
+      "enforcement": {
+        "active_layers": ["soul", "preflight"],
+        "layer_1_soul": "Rule Zero constitutional check classifies action before execution",
+        "layer_2_preflight": "Programmatic validation confirms tier classification"
+      },
+      "action_categories": {
+        "information_management": ["web_research", "summarization", "draft_emails", "file_organization"],
+        "logistics": ["reminders", "calendar_sync", "price_tracking", "system_health_monitoring"],
+        "creative": ["brainstorming", "code_drafting", "image_generation", "translation"]
+      }
+    },
+    "tier_4": {
+      "authority": "Escalate",
+      "risk_profile": "High - External/Financial Impact",
+      "safety_protocol": "Human-in-the-Loop (HITL) Confirmation Required",
+      "enforcement": {
+        "active_layers": ["soul", "preflight"],
+        "optional_layers": ["guardian"],
+        "layer_1_soul": "Agent performs Rule Zero constitutional check before action",
+        "layer_2_preflight": "Programmatic validation script gates execution",
+        "layer_3_guardian": "(Optional) Independent compliance agent audits high-stakes Tier 4 actions"
+      },
+      "action_categories": {
+        "communications": ["send_messages", "social_media_posting", "share_contact_info"],
+        "financial": ["one_time_payments", "subscription_management", "confirm_bookings_reservations"],
+        "access_control": ["guest_device_access", "shared_folder_provisioning"]
+      }
+    },
+    "tier_5": {
+      "authority": "Restricted",
+      "risk_profile": "Critical - Systemic/Legal/Privacy Risk",
+      "safety_protocol": "Principal Verification (MFA/Biometric) Required",
+      "enforcement": {
+        "active_layers": ["soul", "preflight", "guardian", "physical"],
+        "layer_1_soul": "Rule Zero constitutional prohibition",
+        "layer_2_preflight": "Automated halt on protected resource match",
+        "layer_3_guardian": "Independent compliance agent with veto authority",
+        "layer_4_physical": "OS-level permissions, MFA gates, branch protection"
+      },
+      "action_categories": {
+        "systemic": ["core_json_edits", "firmware_updates", "os_restarts", "security_api_rotation"],
+        "privacy": ["pii_decryption", "id_access", "health_record_access", "contract_management"],
+        "authority": ["legal_signatures", "permanent_data_deletion", "modify_safety_constraints"]
+      }
+    }
+  }
+}
